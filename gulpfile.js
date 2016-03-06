@@ -50,7 +50,7 @@ gulp.task('jade', function() {
     .pipe(gulp.dest('build/'))
 });
 
-
+// default
 gulp.task('default', ['jade', 'sync'], function() {
   gulp.watch('src/jade/*/*', ['jade', sync.reload]);
 });
