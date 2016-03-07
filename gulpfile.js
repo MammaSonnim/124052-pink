@@ -1,15 +1,15 @@
-var gulp = require('gulp'),
-  plumb = require('gulp-plumber'),
-  notify = require('gulp-notify'),
-  rename = require('gulp-rename'),
-  jade = require('gulp-jade'),
-  sync = require("browser-sync"),
-  fs = require('fs'),
-  foldero = require('foldero'),
-  dataPath = './src/jade/_data/';
+var gulp = require('gulp');
+var plumber = require('gulp-plumber');
+var notify = require('gulp-notify');
+var rename = require('gulp-rename');
+var jade = require('gulp-jade');
+var browserSync = require("browser-sync");
+var fs = require('fs');
+var foldero = require('foldero');
+var dataPath = 'jade/_data/';
 
 //  browserSync
-gulp.task('sync', function() {
+gulp.task('browserSync', function() {
   sync.init({
     server: {
       baseDir: 'build/'
@@ -38,7 +38,7 @@ gulp.task('jade', function() {
     });
   }
 
-  return gulp.src('src/jade/_pages/*.jade')
+  return gulp.src('jade/_pages/*.jade')
     .pipe(jade({
       locals: {
         site: {
@@ -51,6 +51,6 @@ gulp.task('jade', function() {
 });
 
 // default
-gulp.task('default', ['jade', 'sync'], function() {
-  gulp.watch('src/jade/*/*', ['jade', sync.reload]);
+gulp.task('default', ['jade', 'browserSync'], function() {
+  gulp.watch('jade/*/*', ['jade', sync.reload]);
 });
