@@ -39,6 +39,9 @@ gulp.task('jade', function() {
   }
 
   return gulp.src('jade/_pages/*.jade')
+    .pipe(plumber({
+      errorHandler: notify.onError('Error:  <%= error.message %>')
+    }))
     .pipe(jade({
       locals: {
         site: {
@@ -48,9 +51,13 @@ gulp.task('jade', function() {
       pretty: true
     }))
     .pipe(gulp.dest('build/'))
+    .pipe(notify({
+      message: 'jade up!',
+      sound: 'Pop'
+    }));
 });
 
 // default
 gulp.task('default', ['jade', 'browserSync'], function() {
-  gulp.watch('jade/*/*', ['jade', sync.reload]);
+  gulp.watch('jade/*/*', ['jade', browserSync.reload]);
 });

@@ -1,6 +1,11 @@
 include ../_blocks/bemto/bemto
+include ../_blocks/download
+include ../_blocks/footer
 include ../_blocks/header
+include ../_blocks/logo
 include ../_blocks/menu
+
+block variables
 
 doctype html
 
@@ -8,6 +13,8 @@ head
   meta(charset='utf-8')
   title Pink
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  block style
 
 body
   block content
+  block script

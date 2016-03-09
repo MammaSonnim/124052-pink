@@ -1,18 +1,38 @@
-[
-  {
-    "item": "Информация",
-    "link": "#"
-  },
-  {
-    "item": "Возможности",
-    "link": "#"
-  },
-  {
-    "item": "Отзывы",
-    "link": "#"
-  },
-  {
-    "item": "Стоимость",
-    "link": "#"
-  }
-]
+{ "indexMenu": [
+    {
+      "name": "Информация",
+      "link": "info.html"
+    },
+    {
+      "name": "Возможности",
+      "link": "features.html"
+    },
+    {
+      "name": "Отзывы",
+      "link": "reviews.html"
+    },
+    {
+      "name": "Стоимость",
+      "link": "price.html"
+    }
+  ],
+
+  "mainMenu": [
+    {
+      "name": "Информация",
+      "link": "info.html"
+    },
+    {
+      "name": "Возможности",
+      "link": "features.html"
+    },
+    {
+      "name": "Отзывы",
+      "link": "reviews.html"
+    },
+    {
+      "name": "Стоимость",
+      "link": "price.html"
+    }
+  ]
+}

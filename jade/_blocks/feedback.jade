@@ -1,0 +1,12 @@
+mixin feedback
+  +b.SECTION.feedback
+    +e.slider
+      +e.controls
+        each item in site.data.feedback
+          // посмотреть как определить порядок элемента в массиве
+          +e.INPUT.input(id="" type="radio")
+          +e.LABEL.control(for="")   
+      each item in site.data.feedback
+        +e.slide
+          +e.H2.author= item.name
+          +e.P.text= item.text

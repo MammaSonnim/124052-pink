@@ -1,4 +1,13 @@
 extends ../_layouts/base
 
+block variables
+  -var menu = site.data.menu.indexMenu
+  -var title = site.data.title.indexTitle
+  -var download = site.data.download
+
 block content
-  +header
+  .wrap
+    +header
+    +download
+    +features
+    +feedback

@@ -1,8 +1,8 @@
-- var menuItem = ["Информация", "Возможности", "Отзывы", "Стоимость"]
-
 mixin menu(items)
+
   +b.NAV.menu
+    +b.logo
     +e.UL.list
       each item in items
         +e.LI.item 
-          +e.A.link(href="#") #{item}
+          +e.A.link(href="item.link") #{item.name}
