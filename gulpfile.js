@@ -3,14 +3,14 @@ var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 var rename = require('gulp-rename');
 var jade = require('gulp-jade');
-var browserSync = require("browser-sync");
+var browserSync = require('browser-sync');
 var fs = require('fs');
 var foldero = require('foldero');
 var dataPath = 'jade/_data/';
 
 //  browserSync
 gulp.task('browserSync', function() {
-  sync.init({
+  browserSync.init({
     server: {
       baseDir: 'build/'
     }

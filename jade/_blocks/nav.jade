@@ -1,0 +1,8 @@
+mixin nav
+
+  +b.NAV.nav
+    +logo
+    +e.UL.list
+      each item in site.data.nav
+        +e.LI.item
+          +e.A.link(href=item.link) #{item.name}

@@ -1,0 +1,32 @@
+mixin tariffs
+  +b.SECTION.tariffs
+    +e.wrap
+      +e.controls
+        each item, index in site.data.tariffs
+          - var ifChecked = false
+          if index == 0
+            - ifChecked = true
+          +e.INPUT.input(
+            id="price-" + (index + 1),
+            type="radio",
+            name="tariff",
+            checked = ifChecked
+          )
+          +e.LABEL.control(for="price-" + (index + 1))
+      each item in site.data.tariffs
+        +e.item
+          +e.header
+            +e.P.title= item.name
+            +e.P.price= item.price
+            | &nbsp;USD
+          each val in item.options
+            +e.options
+              +e.SPAN.option= val.name
+              +e.SPAN.value
+                if val.value == true
+                  +e.IMG.true(src="https://placebear.com/30/30")
+                  | true
+                else
+                  +e.IMG.false(src="https://placebear.com/30/30")
+                  | false
+          

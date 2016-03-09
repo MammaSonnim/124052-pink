@@ -1,9 +1,8 @@
 mixin features
   +b.SECTION.features
-    +e.HEADER.header
-      +e.H2.intro Устали от серости мегаполиса?
-      +e.H2.intro Нам есть, что вам предложить
-    +e.item
-      +e.H3.title   
-      
-      //реализация как в меню с контент-тайтлом у АМ, включить тайтлы с интро в json?
+    //- h2 или 2 параграфа в обёртке? 
+    +e.H2.header Устали от серости мегаполиса? <br> Нам есть, что вам предложить!
+    each item in site.data.features  
+      +e.item
+        +e.H3.title #{item.title}
+        +e.P.text #{item.text}
