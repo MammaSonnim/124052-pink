@@ -1,7 +1,6 @@
 mixin features
   +b.SECTION.features
-    //- h2 или 2 параграфа в обёртке? 
-    +e.H2.header Устали от серости мегаполиса? <br> Нам есть, что вам предложить!
+      +e.H2.header Устали от серости мегаполиса? <br> Нам есть, что вам предложить!
     each item in site.data.features  
       +e.item
         +e.H3.title #{item.title}

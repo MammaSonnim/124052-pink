@@ -1,0 +1,23 @@
+mixin post
+  each item in site.data.post
+    +b.ARTICLE.post
+      if item.top
+        +e.A.link(href=item.link)
+          +e.IMG.img--top(
+            src=item.img,
+            alt="Фотография пользователя",
+            width="320",
+            height="138")
+      else
+        .wrap
+          +e.A.link(href=item.link)
+            +e.IMG.img(
+              src=item.img,
+              alt="Фотография пользователя",
+              width="280",
+              height="180")
+      .wrap
+        +e.SPAN.author= item.author
+        +e.SPAN.time= "(" + item.time + " назад)"
+        +e.P.text= item.text
+        +e.SPAN.likes= "Нравится: " + item.likes

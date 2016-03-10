@@ -1,0 +1,17 @@
+mixin editor
+  +b.form
+    +e.img-wrap
+      +e.IMG.img(
+        src="https://placebear.com/200/300",
+        alt="Ваша фотография",
+        width="280",
+        height="374")
+    +e.tools
+      +e.A.tool--crop(href="#")
+      +e.A.tool--fill(href="#")
+      +e.A.tool--contrast(href="#")
+    +e.scale
+      +e.toggle
+    +e.btns
+      button.btn--editor(type="submit") Запостить
+      button.btn--editor(type="reset") Отмена

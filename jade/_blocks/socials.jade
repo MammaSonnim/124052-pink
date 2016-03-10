@@ -1,0 +1,8 @@
+- var socialItem = [{name: "Twitter", link: "#", abbr: "tw"},{name: "Facebook", link: "#", abbr: "fb"},{name: "Youtube", link: "#", abbr: "yt"}]
+
+mixin socials
+  +b.socials
+    each item in socialItem
+      +e.A.item(href=item.link) #{item.name}
+        +e.SVG(class="__img--" + item.abbr)
+          use(xlink:href="#icon_social-" + item.abbr)
