@@ -6,7 +6,7 @@
   "author": "Яна Крикливая",
   "repository": {
     "type": "git",
-    "url": "git://github.com/htmlacademy-adaptive/124052-pink.git"
+    "url": "git@github.com:htmlacademy-adaptive/124052-pink.git"
   },
   "bugs": {
     "url": "https://github.com/htmlacademy-adaptive/124052-pink/issues"
@@ -14,17 +14,21 @@
   "homepage": "https://github.com/htmlacademy-adaptive/124052-pink",
   "devDependencies": {
     "bemto.jade": "git+https://github.com/kizu/bemto.git",
-    "browser-sync": "^2.11.1",
-    "editorconfig-tools": "0.1.1",
     "foldero": "^0.1.1",
-    "gulp": "^3.9.1",
     "gulp-jade": "^1.1.0",
     "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2"
+    "autoprefixer": "6.3.3",
+    "browser-sync": "2.11.1",
+    "editorconfig-tools": "0.1.1",
+    "gulp": "3.9.1",
+    "gulp-plumber": "1.1.0",
+    "gulp-postcss": "6.1.0",
+    "gulp-sass": "2.2.0"
   },
   "scripts": {
-    "test": "editorconfig-tools check *"
+    "test": "editorconfig-tools check *",
+    "build": "gulp style",
+    "start": "gulp serve"
   },
   "engines": {
     "node": "^5.0.0"

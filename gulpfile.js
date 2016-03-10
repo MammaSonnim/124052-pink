@@ -1,21 +1,46 @@
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
+"use strict";
+
+var gulp = require("gulp");
+var sass = require("gulp-sass");
+var plumber = require("gulp-plumber");
+var postcss = require("gulp-postcss");
+var autoprefixer = require("autoprefixer");
+var server = require("browser-sync");
 var notify = require('gulp-notify');
-var rename = require('gulp-rename');
 var jade = require('gulp-jade');
-var browserSync = require('browser-sync');
 var fs = require('fs');
 var foldero = require('foldero');
 var dataPath = 'jade/_data/';
 
-//  browserSync
-gulp.task('browserSync', function() {
-  browserSync.init({
-    server: {
-      baseDir: 'build/'
-    }
-  });
+
+// sass
+gulp.task("style", function() {
+  gulp.src("sass/style.scss")
+    .pipe(plumber({
+      errorHandler: notify.onError('Error:  <%= error.message %>')
+    }))
+    .pipe(sass())
+    .pipe(postcss([
+      autoprefixer({
+        browsers: [
+          "last 1 version",
+          "last 2 Chrome versions",
+          "last 2 Firefox versions",
+          "last 2 Opera versions",
+          "last 2 Edge versions"
+        ]
+      })
+    ]))
+    .pipe(gulp.dest("build/css"))
+    .pipe(server.reload({
+      stream: true
+    }))
+    .pipe(notify({
+      message: 'jade up!',
+      sound: 'Pop'
+    }));
 });
+
 
 // jade
 gulp.task('jade', function() {
@@ -51,13 +76,27 @@ gulp.task('jade', function() {
       pretty: true
     }))
     .pipe(gulp.dest('build/'))
+    .pipe(server.reload({
+      stream: true
+    }))
     .pipe(notify({
       message: 'jade up!',
       sound: 'Pop'
-    }));
+    }));    
 });
 
-// default
-gulp.task('default', ['jade', 'browserSync'], function() {
-  gulp.watch('jade/*/*', ['jade', browserSync.reload]);
+
+// serve
+gulp.task("serve", ["style", "jade"], function() {
+  server.init({
+    server: {
+      baseDir: 'build/'
+    },
+    notify: false,
+    open: true,
+    ui: false
+  });
+
+  gulp.watch("sass/**/*.{scss,sass}", ["style"]);
+  gulp.watch('jade/*/*', ['jade', server.reload]);
 });
