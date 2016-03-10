@@ -26,7 +26,7 @@
     "gulp-sass": "2.2.0"
   },
   "scripts": {
-    "test": "editorconfig-tools check *",
+    "test": "editorconfig-tools check jade/**/*.jade",
     "build": "gulp style",
     "start": "gulp serve"
   },
