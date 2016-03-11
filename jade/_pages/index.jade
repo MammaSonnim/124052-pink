@@ -1,13 +1,13 @@
 extends ../_layouts/base
 
 block variables
-  -var headerTitle = "Взгляните на жизнь иначе!"
+  - var isIndex = true
+  - var isNoFooter = true
 
 block content
-  .wrap
-    +header
-    +download
-    +features
-    +reviews
-    +tariffs
-    +contacts
+  +intro("Взгляните на жизнь иначе!")
+  +download
+  +features
+  +reviews
+  +tariffs
+  +contacts

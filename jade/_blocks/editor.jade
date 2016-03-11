@@ -1,5 +1,24 @@
+-
+  var toolsItem = [
+    {
+      name: "Кадрировать",
+      link: "#",
+      abbr: "crop"
+    },
+    {
+      name: "Заполнить",
+      link: "#",
+      abbr: "fill"
+    },
+    {
+      name: "Контраст",
+      link: "#",
+      abbr: "contrast"
+    }
+  ]
+
 mixin editor
-  +b.form
+  +b.FORM.editor
     +e.img-wrap
       +e.IMG.img(
         src="https://placebear.com/200/300",
@@ -7,9 +26,10 @@ mixin editor
         width="280",
         height="374")
     +e.tools
-      +e.A.tool--crop(href="#")
-      +e.A.tool--fill(href="#")
-      +e.A.tool--contrast(href="#")
+      each item in toolsItem
+        +e.A(class="tool--" + item.abbr, href=item.link, title=item.name)= item.name
+          +e.SVG.icon
+            use
     +e.scale
       +e.toggle
     +e.btns

@@ -1,9 +1,13 @@
-mixin logo
-  +b.logo
-    +e.SPAN.text Pink
-mixin logo-inner
-  +b.logo
-    +e.A.link(href="#")
-      +e.SVG.img
-        use
-    +e.SPAN.text Pink      
+mixin logo(isImg)
+  if isImg == true
+    +b.logo
+      +e.A.link(href="index.html")
+        +e.SVG.icon
+          use
+        +e.SPAN.text Pink
+  else if isIndex
+    +b.logo
+      +e.SPAN.text Pink
+  else
+    +b.logo
+      +e.A.link(href="index.html") Pink

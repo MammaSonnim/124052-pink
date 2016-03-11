@@ -1,18 +1,23 @@
-include ../_blocks/bemto/bemto
+include ../_vendor/bemto/bemto
+include ../_blocks/btn
 include ../_blocks/contacts
 include ../_blocks/copyright
 include ../_blocks/download
 include ../_blocks/editor
 include ../_blocks/features
 include ../_blocks/feed
-include ../_blocks/footer
-include ../_blocks/header
+include ../_blocks/form
+include ../_blocks/intro
 include ../_blocks/logo
+include ../_blocks/modal
 include ../_blocks/nav
+include ../_blocks/page-footer
+include ../_blocks/page-header
 include ../_blocks/post
 include ../_blocks/reviews
 include ../_blocks/socials
 include ../_blocks/tariffs
+include ../_blocks/text
 
 block variables
 
@@ -25,5 +30,9 @@ head
   block style
 
 body
-  block content
+  .wrap
+    +page-header
+    main.content
+      block content
+    +page-footer 
   block script

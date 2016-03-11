@@ -1,6 +1,6 @@
 mixin contacts
   +b.SECTION.contacts
-    +e.H2.title Остались вопросы? Свяжитесь с нами!
+    +e.H2.header Остались вопросы? Свяжитесь с нами!
     +e.DL.list
       each item in site.data.contacts
         +e.DT.title= item.title + ":"
@@ -11,5 +11,5 @@ mixin contacts
             when "email"
               +e.A.link(href="mailto:"+item.value)= item.descr
             default
-              +e.SPAN.= item.descr
+              +e.SPAN.item= item.descr
     +e.map

@@ -1,8 +1,28 @@
-mixin nav
+-
+  var navItem = [
+    {
+      name: "Информация",
+      link: "info.html"
+    },
+    {
+      name: "Возможности",
+      link: "features.html"
+    },
+    {
+      name: "Отзывы",
+      link: "reviews.html"
+    },
+    {
+      name: "Стоимость",
+      link: "price.html"
+    }
+  ]
 
+mixin nav
   +b.NAV.nav
     +logo
+    +e.ham
     +e.UL.list
-      each item in site.data.nav
+      each item in navItem
         +e.LI.item
           +e.A.link(href=item.link) #{item.name}

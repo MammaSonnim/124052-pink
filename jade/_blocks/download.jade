@@ -1,9 +1,27 @@
+-
+  var downloadLink = [
+    {
+      text: "Apple iTunes",
+      link: "#",
+      abbr: "apple"
+    },
+    {
+      text: "Google Play",
+      link: "#",
+      abbr: "google"
+    },
+    {
+      text: "Windows Center",
+      link: "#",
+      abbr: "win"
+    }
+  ]
+
 mixin download(items)
   +b.SECTION.download
-    +e.btn
-      +b.A.btn(href="#") Скачать приложение
+    +btn("Скачать приложение")
     +e.links
-     +e.A.link--apple(href="#") Apple iTunes
-     +e.A.link--google(href="#") Google Play
-     +e.A.link--win(href="#") Windows Center
+      each item in downloadLink
+        +e.A(href=item.link, class="__link--" + item.abbr, title="Скачать в " + item.text)= item.text
+          +e.SVG(class="__icon--" + item.abbr)
     +e.P.text Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8

@@ -1,0 +1,7 @@
+mixin intro(title)
+  if isIndex == true
+    +b.SECTION.intro.--index
+      +e.H1.title= title
+  else
+    +b.HEADER.intro
+      +e.H1.title= title

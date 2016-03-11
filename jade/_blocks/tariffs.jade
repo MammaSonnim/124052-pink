@@ -15,17 +15,16 @@ mixin tariffs
           +e.LABEL.control(for="price-" + (index + 1))
       each item in site.data.tariffs
         +e.item
-          +e.header
-            +e.P.title= item.name
-            +e.P.price= item.price
-            | &nbsp;USD
-          each val in item.options
-            +e.options
-              +e.SPAN.option= val.name
-              +e.SPAN.value
-                if val.value == true
-                  +e.IMG.true(src="https://placebear.com/30/30")
-                  | true
-                else
-                  +e.IMG.false(src="https://placebear.com/30/30")
-                  | false
+          +e.TABLE
+            +e.TR
+              +e.TH(colspan="2")
+                +e.SPAN.title= item.name
+                +e.SPAN.price= item.price + " USD"
+            each val in item.options
+              +e.TR
+                +e.TD= val.name
+                +e.TD
+                  if val.value == true
+                    +e.SPAN.is--true Есть
+                  else
+                    +e.SPAN.--false Нет
