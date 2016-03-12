@@ -1,0 +1,21 @@
+-
+  var fsCheck = [
+    "Pink для iOS",
+    "Pink на Android",
+    "Windows Phone"
+  ]
+
+mixin fieldset-check
+  +b.FIELDSET.fieldset-check
+  +e.P.title С каким приложением путешествовали?
+    each item, index in fsCheck
+      - var isChecked = false
+      if index == 0
+        - isChecked = true
+      +e.INPUT.input(
+        id="fs-check-" + (index + 1), 
+        type="checkbox",
+        name="os",
+        checked=isChecked
+        )
+      +e.LABEL.label(for="fs-check-" + (index + 1))= item

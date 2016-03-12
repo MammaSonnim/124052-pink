@@ -1,0 +1,24 @@
+-
+  var fsName = [
+    {
+      label: "Имя",
+      placeholder: "Введите ваше имя",
+      type: "text"
+    },
+    {
+      label: "Фамилия",
+      placeholder: "Укажите фамилию",
+      type: "text"
+    },
+    {
+      label: "Отчество",
+      placeholder: "Ну и отчество тоже",
+      type: "text"
+    }
+  ]
+
+mixin fieldset-name
+  +b.FIELDSET.fieldset-name
+    each item, index in fsName
+      +e.LABEL.label(for="fs-name-" + (index + 1))= item.label
+      +e.INPUT.input(id="fs-name-" + (index + 1), type=item.type)

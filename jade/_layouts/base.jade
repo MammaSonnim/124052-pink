@@ -1,11 +1,15 @@
 include ../_vendor/bemto/bemto
-include ../_blocks/btn
 include ../_blocks/contacts
 include ../_blocks/copyright
 include ../_blocks/download
 include ../_blocks/editor
 include ../_blocks/features
 include ../_blocks/feed
+include ../_blocks/fieldset-check
+include ../_blocks/fieldset-contacts
+include ../_blocks/fieldset-name
+include ../_blocks/fieldset-radio
+include ../_blocks/fieldset-text
 include ../_blocks/form
 include ../_blocks/intro
 include ../_blocks/logo
@@ -30,7 +34,7 @@ head
   block style
 
 body
-  .wrap
+  .container
     +page-header
     main.content
       block content

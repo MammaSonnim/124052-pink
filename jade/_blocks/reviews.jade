@@ -3,15 +3,15 @@ mixin reviews
     +e.wrap
       +e.controls
         each item, index in site.data.reviews
-          - var ifChecked = false
+          - var isChecked = false
           if index == 0
-            - ifChecked = true
+            - isChecked = true
           +e.INPUT.input(
             id="review-" + (index + 1),
             type="radio",
             name="reviews",
-            checked = ifChecked
-          )
+            checked=isChecked
+            )
           +e.LABEL.control(for="review-" + (index + 1))
       each item in site.data.reviews
         +e.CITE.item

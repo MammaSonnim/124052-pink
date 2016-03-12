@@ -1,0 +1,19 @@
+-
+  var fsContacts = [
+    {
+      label: "Номерок телефончика",
+      placeholder: "Номер, пожалуйста",
+      type: "phone"
+    },
+    {
+      label: "Адресок почты",
+      placeholder: "E-mail, пожалуйста",
+      type: "email"
+    }
+  ]
+
+mixin fieldset-contacts
+  +b.FIELDSET.fieldset-contacts
+    each item, index in fsContacts
+      +e.LABEL.label(for="fs-contacts-" + (index + 1))= item.label
+      +e.INPUT.input(id="fs-contacts-" + (index + 1), type=item.type)

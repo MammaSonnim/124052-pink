@@ -1,0 +1,24 @@
+-
+  var fsRadio = [
+    "Сделал селфи с акулой",
+    "Обгорел на пляже",
+    "Видел Чака Норриса",
+    "Накупил сувениров",
+    "Удержал башню",
+    "Разгромил отель"
+  ]
+
+mixin fieldset-radio
+  +b.FIELDSET.fieldset-radio
+    +e.P.title Ваши безбашенные достижения в путешествии
+    each item, index in fsRadio
+      - var isChecked = false
+      if index == 0
+        - isChecked = true
+      +e.INPUT.input(
+        id="fs-radio-" + (index + 1), 
+        type="radio",
+        name="achievements",
+        checked=isChecked
+        )
+      +e.LABEL.label(for="fs-radio-" + (index + 1))= item

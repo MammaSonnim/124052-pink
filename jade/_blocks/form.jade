@@ -1,7 +1,19 @@
 mixin form
   +b.FORM.form
-    +e.FIELDSET.fieldset-text
-    +e.FIELDSET.fieldset-check
-    +e.FIELDSET.fieldset-text
-    +e.FIELDSET.fieldset-radio
-    +e.FIELDSET.fieldset-text-field
+    +b.wrap
+      +fieldset-name
+    +b.wrap--dark
+      +fieldset-check
+    +b.wrap
+      +fieldset-contacts
+    +b.wrap--dark
+      +fieldset-radio
+    +b.wrap
+      +fieldset-text
+    +e.btn
+      +b.BUTTON.btn--form(type="submit") Отправить форму
+    +e.SMALL.disclaimer
+      +e.SPAN.asterisk *
+      | — обязательные поля
+    +modal
+    +modal-fail  

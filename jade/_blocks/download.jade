@@ -20,7 +20,7 @@
 mixin download(items)
   +b.download
     +e.btn
-      +btn("Скачать приложение")
+      +b.A.btn--modal(href="#") Скачать приложение
     +e.links
       each item in downloadLink
         +e.A(href=item.link, class="__link--" + item.abbr, title="Скачать в " + item.text)= item.text
