@@ -1,3 +1,5 @@
 mixin feed
   +b.SECTION.feed
-    +post
+    .container
+      each item in site.data.feed
+        +post(item)

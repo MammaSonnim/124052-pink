@@ -1,19 +1,47 @@
 mixin form
   +b.FORM.form
-    +b.wrap
-      +fieldset-name
-    +b.wrap--dark
-      +fieldset-check
-    +b.wrap
-      +fieldset-contacts
-    +b.wrap--dark
-      +fieldset-radio
-    +b.wrap
-      +fieldset-text
+    .box
+      .container
+        +e.FIELDSET.fieldset
+          each item, index in site.data.form.fieldsName
+            +field(item, index)
+
+    .box.box--dark
+      .container
+        +e.FIELDSET.fieldset
+          +e.P.title Ваши безбашенные достижения в путешествии
+          each item, index in site.data.form.radiosAchievement
+            +option(item, index)
+
+    .box
+      .container
+        +e.FIELDSET.fieldset
+          each item, index in site.data.form.fieldsContact
+            +field(item, index)
+
+    .box.box--dark
+      .container
+        +e.FIELDSET.fieldset
+          +e.P.title С каким приложением путешествовали?
+          each item, index in site.data.form.checkboxesOs
+            +option(item, index)
+
+    .box
+      .container
+        +e.FIELDSET.fieldset
+          +e.LABEL.title(for="fs-text") Опишите свои эмоции
+          +e.TEXTAREA.textarea(
+            id="fs-text",
+            rows="5",
+            name="text",
+            placeholder="Можно прям в красках, не стесняясь в выражениях"
+            )
+
     +e.btn
       +b.BUTTON.btn--form(type="submit") Отправить форму
     +e.SMALL.disclaimer
       +e.SPAN.asterisk *
       | — обязательные поля
+
     +modal
-    +modal-fail  
+    +modal-fail

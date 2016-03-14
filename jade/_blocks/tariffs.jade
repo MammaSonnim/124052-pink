@@ -3,9 +3,9 @@ mixin tariffs
     +e.wrap
       +e.controls
         each item, index in site.data.tariffs
-          - var ifChecked = false
+          - var isChecked = false
           if index == 0
-            - ifChecked = true
+            - isChecked = true
           +e.INPUT.input(
             id="price-" + (index + 1),
             type="radio",
@@ -19,12 +19,14 @@ mixin tariffs
             +e.TR
               +e.TH(colspan="2")
                 +e.SPAN.title= item.name
-                +e.SPAN.price= item.price + " USD"
+                +e.SPAN.price= item.price
             each val in item.options
               +e.TR
                 +e.TD= val.name
                 +e.TD
-                  if val.value == true
-                    +e.SPAN.is--true Есть
+                  if val.isValue == true
+                    +e.SVG.icon--true Есть
+                      use
                   else
-                    +e.SPAN.--false Нет
+                    +e.SVG.icon--false Нет
+                      use

@@ -1,5 +1,5 @@
 -
-  var navItem = [
+  var navItems = [
     {
       name: "Информация",
       link: "info.html"
@@ -21,8 +21,8 @@
 mixin nav
   +b.NAV.nav
     +logo
-    +e.ham
+    +e.icon-menu
     +e.UL.list
-      each item in navItem
+      each item in navItems
         +e.LI.item
           +e.A.link(href=item.link) #{item.name}

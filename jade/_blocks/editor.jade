@@ -1,19 +1,19 @@
 -
-  var toolsItem = [
+  var toolsItems = [
     {
-      name: "Кадрировать",
-      link: "#",
-      abbr: "crop"
+      name: "crop",
+      title: "Кадрировать",
+      isChecked: "checked"
     },
     {
-      name: "Заполнить",
-      link: "#",
-      abbr: "fill"
+      name: "fill",
+      title: "Заполнить",
+      isChecked: false
     },
     {
-      name: "Контраст",
-      link: "#",
-      abbr: "contrast"
+      name: "contrast",
+      title: "Контраст",
+      isChecked: false
     }
   ]
 
@@ -22,16 +22,29 @@ mixin editor
     +e.img-wrap
       +e.IMG.img(
         src="https://placebear.com/200/300",
-        alt="Ваша фотография",
-        width="280",
-        height="374")
+        alt="Ваша фотография"
+        )
     +e.tools
-      each item in toolsItem
-        +e.A(class="tool--" + item.abbr, href=item.link, title=item.name)= item.name
+      each item, index in toolsItems
+        +e.INPUT(
+          type="radio",
+          name="tool"
+          id="tool-" + item.name + (index + 1),
+          checked=item.isChecked
+          )
+        +e.LABEL(
+          class="__item--" + item.name,
+          for="tool-" + item.name + (index + 1)
+          )
           +e.SVG.icon
             use
-    +e.scale
-      +e.toggle
-    +e.btns
+
+      +e.controls
+        each item in toolsItems
+          +e(class="control--" + item.name)
+            +e.scale
+              +e.toggle
+
+    +e.inner
       +b.BUTTON.btn--editor(type="submit") Запостить
       +b.BUTTON.btn--editor(type="reset") Отмена

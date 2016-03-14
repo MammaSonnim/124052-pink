@@ -1,28 +1,15 @@
--
-  var downloadLink = [
-    {
-      text: "Apple iTunes",
-      link: "#",
-      abbr: "apple"
-    },
-    {
-      text: "Google Play",
-      link: "#",
-      abbr: "google"
-    },
-    {
-      text: "Windows Center",
-      link: "#",
-      abbr: "win"
-    }
-  ]
-
-mixin download(items)
+mixin download
   +b.download
-    +e.btn
-      +b.A.btn--modal(href="#") Скачать приложение
+    +e.inner
+      +b.A.btn(href="#") Скачать приложение
     +e.links
-      each item in downloadLink
-        +e.A(href=item.link, class="__link--" + item.abbr, title="Скачать в " + item.text)= item.text
-          +e.SVG(class="__icon--" + item.abbr)
+      +e.A.link--apple(href="#", title="Скачать в Apple iTunes") Apple iTunes
+        +e.SVG.icon--apple
+          use
+      +e.A.link--google(href="#", title="Скачать на Google Play") Google Play
+        +e.SVG.icon--google
+          use
+      +e.A.link--win(href="#", title="Скачать в Windows Center") Windows Center
+        +e.SVG.icon--win
+          use
     +e.P.text Доступно для iPhone, iPad, Android, Windows Phone, OS X, Windows 8

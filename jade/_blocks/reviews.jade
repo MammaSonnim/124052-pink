@@ -14,6 +14,6 @@ mixin reviews
             )
           +e.LABEL.control(for="review-" + (index + 1))
       each item in site.data.reviews
-        +e.CITE.item
-          +e.SPAN.author= item.name
-          +e.SPAN.text= item.text
+        +e.BLOCKQUOTE.item
+          +e.H1.author= item.author
+          +e.P.text= item.text

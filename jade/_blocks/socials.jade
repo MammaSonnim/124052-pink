@@ -1,25 +1,11 @@
--
-  var socialItem = [
-    {
-      name: "Twitter",
-      link: "#",
-      abbr: "tw"
-    },
-    {
-      name: "Facebook",
-      link: "#",
-      abbr: "fb"
-    },
-    {
-      name: "Youtube",
-      link: "#",
-      abbr: "yt"
-    }
-  ]
-
 mixin socials
   +b.socials
-    each item in socialItem
-      +e.A.item(href=item.link, title="Мы в " + item.name)= item.name
-        +e.SVG(class="__icon--" + item.abbr)
-          use
+    +e.A.item--fb(href="#", title="Pink на Facebook") Facebook
+      +e.SVG.icon--fb
+        use
+    +e.A.item--tw(href="#", title="Pink в Twitter") Twitter
+      +e.SVG.icon--tw
+        use
+    +e.A.item--yt(href="#", title="Pink на Youtube") Youtube
+      +e.SVG.icon--yt
+        use

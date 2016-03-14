@@ -1,27 +1,20 @@
-mixin post
-  each item in site.data.post
-    +b.ARTICLE.post
+mixin post(item)
+  +b.ARTICLE.post
+    +e.A.link(href=item.link)
       if item.top
-        +e.A.link(href=item.link)
-          +e.IMG.img--top(
-            src=item.img,
-            alt="Панорама дня",
-            title="Панорама дня"
-            width="320",
-            height="138")
+        +e.IMG.img--top(
+          src=item.img
+          alt=item.imgAlt)
       else
-        .wrap
-          +e.A.link(href=item.link)
-            +e.IMG.img(
-              src=item.img,
-              alt="Фотография пользователя",
-              title="Фотография пользователя"
-              width="280",
-              height="180")
-      .wrap
-        +e.SPAN.author= item.author
-        +e.SPAN.time= "(" + item.time + " назад)"
-        +e.P.text= item.text
-        +e.SPAN.likes= "Нравится: " + item.likes
+        +e.IMG.img(
+          src=item.img
+          alt=item.imgAlt)
+      +e.HEADER.header
+        +e.H1.author= item.author
+        +e.TIME.time(pubdate="pubdate", datetime=item.pubdate)= "(" + item.time + ")"
+      +e.P.text= item.text
+      +e.FOOTER.footer
+        +e.BUTTON(type="submit").btn
           +e.SVG.icon
             use
+        +e.SPAN.likes= "Нравится: " + item.likes

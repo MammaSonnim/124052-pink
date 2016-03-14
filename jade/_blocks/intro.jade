@@ -1,7 +1,7 @@
 mixin intro(title)
   if isIndex == true
-    +b.SECTION.intro.--index
+    +b.intro--index
       +e.H1.title= title
   else
-    +b.HEADER.intro
+    +b.intro
       +e.H1.title= title

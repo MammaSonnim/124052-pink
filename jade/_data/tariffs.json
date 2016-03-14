@@ -1,55 +1,55 @@
 [
   {
     "name": "База",
-    "price": "1.99",
+    "price": "1.99 USD",
     "options": [
       {
         "name": "Розовый фильтр",
-        "value": true
+        "isValue": true
       },
       {
         "name": "Смайлики",
-        "value": false
+        "isValue": false
       },
       {
         "name": "Комментарии",
-        "value": false
+        "isValue": false
       }
     ]
   },
   {
     "name": "Стандарт",
-    "price": "3.99",
+    "price": "3.99 USD",
     "options": [
       {
         "name": "Розовый фильтр",
-        "value": true
+        "isValue": true
       },
       {
         "name": "Смайлики",
-        "value": true
+        "isValue": true
       },
       {
         "name": "Комментарии",
-        "value": false
+        "isValue": false
       }
     ]
   },
   {
     "name": "Анлим",
-    "price": "9.99",
+    "price": "9.99 USD",
     "options": [
       {
         "name": "Розовый фильтр",
-        "value": true
+        "isValue": true
       },
       {
         "name": "Смайлики",
-        "value": true
+        "isValue": true
       },
       {
         "name": "Комментарии",
-        "value": true
+        "isValue": true
       }
     ]
   }
