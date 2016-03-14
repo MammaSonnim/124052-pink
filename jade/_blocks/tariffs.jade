@@ -14,19 +14,20 @@ mixin tariffs
           )
           +e.LABEL.control(for="price-" + (index + 1))
       each item in site.data.tariffs
-        +e.item
-          +e.TABLE
+        +e.TABLE.item
+          +e.TR
+            +e.TH(colspan="2")
+              +e.SPAN.title= item.name
+              +e.SPAN.price= item.price
+          each val in item.options
             +e.TR
-              +e.TH(colspan="2")
-                +e.SPAN.title= item.name
-                +e.SPAN.price= item.price
-            each val in item.options
-              +e.TR
-                +e.TD= val.name
-                +e.TD
-                  if val.isValue == true
-                    +e.SVG.icon--true Есть
-                      use
-                  else
-                    +e.SVG.icon--false Нет
-                      use
+              +e.TD= val.name
+              +e.TD
+                if val.isValue == true
+                  | Есть
+                  +e.SVG.icon--true
+                    use
+                else
+                  | Нет
+                  +e.SVG.icon--false
+                    use

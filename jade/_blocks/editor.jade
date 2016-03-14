@@ -22,7 +22,8 @@ mixin editor
     +e.img-wrap
       +e.IMG.img(
         src="https://placebear.com/200/300",
-        alt="Ваша фотография"
+        alt="Ваша фотография",
+        title="Ваша фотография"
         )
     +e.tools
       each item, index in toolsItems
@@ -35,7 +36,7 @@ mixin editor
         +e.LABEL(
           class="__item--" + item.name,
           for="tool-" + item.name + (index + 1)
-          )
+          )= item.title
           +e.SVG.icon
             use
 

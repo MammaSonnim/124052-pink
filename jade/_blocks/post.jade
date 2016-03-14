@@ -3,12 +3,14 @@ mixin post(item)
     +e.A.link(href=item.link)
       if item.top
         +e.IMG.img--top(
-          src=item.img
-          alt=item.imgAlt)
+          src=item.img,
+          alt=item.imgAlt,
+          title=item.imgAlt)
       else
         +e.IMG.img(
           src=item.img
-          alt=item.imgAlt)
+          alt=item.imgAlt,
+          title=item.imgAlt)
       +e.HEADER.header
         +e.H1.author= item.author
         +e.TIME.time(pubdate="pubdate", datetime=item.pubdate)= "(" + item.time + ")"
