@@ -38,21 +38,18 @@
   "checkboxesOs": [
     {
       "label": "Pink для iOS",
-      "inputType": "checkbox",
       "name": "os",
       "isChecked": "checked",
       "isDisabled": false
     },
     {
       "label": "Pink на Android",
-      "inputType": "checkbox",
       "name": "os",
       "isChecked": false,
       "isDisabled": false
     },
     {
       "label": "Windows Phone",
-      "inputType": "checkbox",
       "name": "os",
       "isChecked": false,
       "isDisabled": false
@@ -62,42 +59,36 @@
   "radiosAchievement": [
     {
       "label": "Сделал селфи с акулой",
-      "inputType": "radio",
       "name": "achievement",
       "isChecked": "checked",
       "isDisabled": false
     },
     {
       "label": "Обгорел на пляже",
-      "inputType": "radio",
       "name": "achievement",
       "isChecked": false,
       "isDisabled": "disabled"
     },
     {
       "label": "Видел Чака Норриса",
-      "inputType": "radio",
       "name": "achievement",
       "isChecked": false,
       "isDisabled": false
     },
     {
       "label": "Накупил сувениров",
-      "inputType": "radio",
       "name": "achievement",
       "isChecked": false,
       "isDisabled": false
     },
     {
       "label": "Удержал башню",
-      "inputType": "radio",
       "name": "achievement",
       "isChecked": false,
       "isDisabled": false
     },
     {
       "label": "Разгромил отель",
-      "inputType": "radio",
       "name": "achievement",
       "isChecked": false,
       "isDisabled": false

@@ -1,6 +1,7 @@
 mixin reviews
   +b.SECTION.reviews
-    +e.wrap
+    //- slider-block starts
+    +b.slider--reviews
       +e.controls
         each item, index in site.data.reviews
           - var isChecked = false
@@ -13,7 +14,6 @@ mixin reviews
             checked=isChecked
             )
           +e.LABEL.control(for="review-" + (index + 1))
-      each item in site.data.reviews
-        +e.BLOCKQUOTE.item
-          +e.H1.author= item.author
-          +e.P.text= item.text
+    //- slider-block ends
+    each item in site.data.reviews
+      +review(item)

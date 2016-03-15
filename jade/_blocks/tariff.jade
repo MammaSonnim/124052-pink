@@ -1,0 +1,18 @@
+mixin tariff(item)
+  +b.TABLE.tariff
+    +e.TR
+      +e.TH(colspan="2")
+        +e.SPAN.title= item.name
+        +e.SPAN.price= item.price
+    each val in item.options
+      +e.TR
+        +e.TD= val.name
+        +e.TD
+          if val.isValue
+            | Есть
+            +e.SVG.icon--true
+              use
+          else
+            | Нет
+            +e.SVG.icon--false
+              use

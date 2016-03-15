@@ -40,12 +40,11 @@ mixin editor
           +e.SVG.icon
             use
 
-      +e.controls
-        each item in toolsItems
-          +e(class="control--" + item.name)
-            +e.scale
-              +e.toggle
+      each item in toolsItems
+        +e(class="control--" + item.name)
+          +e.scale
+            +e.toggle
 
-    +e.inner
+    +e.btn-wrap
       +b.BUTTON.btn--editor(type="submit") Запостить
       +b.BUTTON.btn--editor(type="reset") Отмена
