@@ -1,19 +1,44 @@
 mixin tariffs
+  //- вводим переменную firstItem, чтобы обращаться к одному из элементов массива в tariffs.json, для того чтобы вытаскивать имена и количество тарифов
+  - var firstItem = site.data.tariffs[1]
+
   +b.SECTION.tariffs
     //- slider-block starts
     +b.slider--tariffs
+      each item, index in firstItem.tariffs
+        - var isChecked = false
+        if index == 0
+          - isChecked = true
+        +e.INPUT.input(
+          id="tariff-" + (index + 1),
+          type="radio",
+          name="tariffs",
+          checked=isChecked
+          )
       +e.controls
-        each item, index in site.data.tariffs
-          - var isChecked = false
-          if index == 0
-            - isChecked = true
-          +e.INPUT.input(
-            id="price-" + (index + 1),
-            type="radio",
-            name="tariffs",
-            checked = ifChecked
-            )
+        each item, index in firstItem.tariffs
           +e.LABEL.control(for="tariff-" + (index + 1))
-    //- slider-block ends
-    each item in site.data.tariffs
-      +tariff(item)
+      +e.slides
+        //- slider-content
+        table.tariffs__table
+          tr
+            //- по сути пустой th на макете, но почему бы не наделить его подходящим по смыслу значением
+            th Тарифы
+            //- обращаемся к первому элементу массива (можно к любому), чтобы вытащить имена тарифов
+            each item in firstItem.tariffs
+              th= item.tariffName
+          //- формируем ряды таблицы, 1 item в массиве = 1 ряд
+          each item in site.data.tariffs
+            tr
+              //- формируем TD из суб-массива tariffs в tariffs.json, и добавляем название фильтра data-option (из родительского массива), который будет передаваться через контент. data-tariff нужен для удобства и наглядности
+              each val in item.tariffs
+               td(data-option=item.name, data-tariff=val.tariffName)
+                //-  делаем проверку для привязки соответствующей иконки
+                if val.isValue
+                  | Есть
+                  svg.icon--true
+                    use
+                else
+                  | Нет
+                  svg.icon--false
+                    use

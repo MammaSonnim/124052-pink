@@ -1,54 +1,51 @@
 [
   {
-    "name": "База",
-    "price": "1.99 USD",
-    "options": [
+    "name": "Розовый фильтр",
+    "tariffs": [
       {
-        "name": "Розовый фильтр",
+        "tariffName": "База",
         "isValue": true
       },
       {
-        "name": "Смайлики",
+        "tariffName": "Стандарт",
         "isValue": false
       },
       {
-        "name": "Комментарии",
-        "isValue": false
-      }
-    ]
-  },
-  {
-    "name": "Стандарт",
-    "price": "3.99 USD",
-    "options": [
-      {
-        "name": "Розовый фильтр",
-        "isValue": true
-      },
-      {
-        "name": "Смайлики",
-        "isValue": true
-      },
-      {
-        "name": "Комментарии",
+        "tariffName": "Анлим",
         "isValue": false
       }
     ]
   },
   {
-    "name": "Анлим",
-    "price": "9.99 USD",
-    "options": [
+    "name": "Смайлики",
+    "tariffs": [
       {
-        "name": "Розовый фильтр",
+        "tariffName": "База",
         "isValue": true
       },
       {
-        "name": "Смайлики",
+        "tariffName": "Стандарт",
         "isValue": true
       },
       {
-        "name": "Комментарии",
+        "tariffName": "Анлим",
+        "isValue": true
+      }
+    ]
+  },
+  {
+    "name": "Комментарии",
+    "tariffs": [
+      {
+        "tariffName": "База",
+        "isValue": true
+      },
+      {
+        "tariffName": "Стандарт",
+        "isValue": true
+      },
+      {
+        "tariffName": "Анлим",
         "isValue": true
       }
     ]
