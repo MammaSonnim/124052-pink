@@ -16,3 +16,27 @@ mixin tariff(item)
             | Нет
             +e.SVG.icon--false
               use
+
+mixin tariff2
+  //- data-tariff для читабельности
+  table
+    tr
+      th
+      th База
+      th Стандарт
+      th Анлим
+    tr
+      td Розовый фильтр
+      td(data-tariff="База" data-option="Розовый фильтр") true
+      td(data-tariff="Стандарт" data-option="Розовый фильтр") true
+      td(data-tariff="Анлим" data-option="Розовый фильтр") true
+    tr
+      td Смайлики
+      td(data-tariff="База" data-option="Смайлики") false
+      td(data-tariff="Стандарт" data-option="Смайлики") true
+      td(data-tariff="Анлим" data-option="Смайлики") true
+    tr
+      td Комментарии
+      td(data-tariff="База" data-option="Комментарии") false
+      td(data-tariff="Стандарт" data-option="Комментарии") false
+      td(data-tariff="Анлим" data-option="Комментарии") true
