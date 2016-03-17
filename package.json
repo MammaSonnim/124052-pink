@@ -13,6 +13,10 @@
   },
   "homepage": "https://github.com/htmlacademy-adaptive/124052-pink",
   "devDependencies": {
+    "bemto.jade": "git+https://github.com/kizu/bemto.git",
+    "foldero": "^0.1.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-notify": "^2.2.0",
     "autoprefixer": "6.3.3",
     "browser-sync": "2.11.1",
     "editorconfig-tools": "0.1.1",
@@ -22,7 +26,7 @@
     "gulp-sass": "2.2.0"
   },
   "scripts": {
-    "test": "editorconfig-tools check *",
+    "test": "editorconfig-tools check jade/**/*.jade",
     "build": "gulp style",
     "start": "gulp serve"
   },
