@@ -1,11 +1,9 @@
 mixin tariffs
-  //- вводим переменную firstItem, чтобы обращаться к одному из элементов массива в tariffs.json, для того чтобы вытаскивать имена и количество тарифов
-  - var firstItem = site.data.tariffs[1]
-
   +b.SECTION.tariffs
     //- slider-block starts
     +b.slider--tariffs
-      each item, index in firstItem.tariffs
+      //- создаем нужное количество управляющих элементов слайдера в зависимости от количества тарифов в tariffsList
+      each index in site.data.tariffs.tariffsList
         - var isChecked = false
         if index == 0
           - isChecked = true
@@ -16,7 +14,7 @@ mixin tariffs
           checked=isChecked
           )
       +e.controls
-        each item, index in firstItem.tariffs
+        each index in site.data.tariffs.tariffsList
           +e.LABEL.control(for="tariff-" + (index + 1))
       +e.slides
         //- slider-content
@@ -24,21 +22,23 @@ mixin tariffs
           tr
             //- по сути пустой th на макете, но почему бы не наделить его подходящим по смыслу значением
             th Тарифы
-            //- обращаемся к первому элементу массива (можно к любому), чтобы вытащить имена тарифов
-            each item in firstItem.tariffs
-              th= item.tariffName
-          //- формируем ряды таблицы, 1 item в массиве = 1 ряд
-          each item in site.data.tariffs
+            //- обращаемся к tariffsList, чтобы вытащить имена тарифов
+            each item in site.data.tariffs.tariffsList
+              th
+                span.tariffs__name= item.tariffName
+                span.tariffs__price= item.tariffPrice
+          //- формируем остальные ряды таблицы, каждая услуга в массиве options = 1 ряд
+          each item in site.data.tariffs.options
             tr
-              //- формируем TD из суб-массива tariffs в tariffs.json, и добавляем название фильтра data-option (из родительского массива), который будет передаваться через контент. data-tariff нужен для удобства и наглядности
-              each val in item.tariffs
-               td(data-option=item.name, data-tariff=val.tariffName)
-                //-  делаем проверку для привязки соответствующей иконки
-                if val.isValue
-                  | Есть
-                  svg.icon--true
-                    use
-                else
-                  | Нет
-                  svg.icon--false
-                    use
+              //- формируем ячейки таблицы с состоянием услуг из options -> optionValues. Из родительского массива options вытягиваем название услуги, и записываем в data-option. data-tariff нужен для удобства и наглядности
+              each val in item.optionValues
+                td(data-option=item.optionName, data-tariff=val.tariffName)
+                  //-  делаем проверку состояния услуги для привязки соответствующей иконки
+                  if val.isValue
+                    | Есть
+                    svg.icon--true
+                      use
+                  else
+                    | Нет
+                    svg.icon--false
+                      use
