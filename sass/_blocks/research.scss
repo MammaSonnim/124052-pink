@@ -1,0 +1,13 @@
+.research {
+  display: none;
+
+  @media #{$tablet} {
+    display: block;
+    background-color: #ffffff;
+  }
+
+  @media #{$desktop} {
+    display: block;
+    background-color: #f2f2f2;
+  }
+}

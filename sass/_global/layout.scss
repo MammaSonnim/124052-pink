@@ -1,5 +1,18 @@
 .container {
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 20px;
   outline: 1px solid bisque;
+
+  @media #{$tablet} {
+    min-width: 700px;
+    padding: 0 40px;
+  }
+
+  @media #{$desktop} {
+    min-width: 1200px;
+    padding: 0 130px;
+  }
 }
 
 .box {

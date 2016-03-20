@@ -1,3 +1,5 @@
 .page-header {
-  outline: 1px solid gainsboro;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3);
 }

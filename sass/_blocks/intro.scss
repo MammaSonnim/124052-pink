@@ -1,3 +1,38 @@
 .intro {
-  outline: 1px solid gainsboro;
+  @include container;
+  min-height: 455px;
+  margin-top: -66px;
+  background:
+    #1d2631
+    url(../img/bg-back-mobile.jpg)
+    center / cover
+    no-repeat;
+  color: #ffffff;
+
+  @media #{$tablet} {
+    min-height: 730px;
+    margin-top: -110px;
+    padding-top: 210px;
+  }
+
+  @media #{$desktop} {
+    min-height: 850px;
+    margin-top: -110px;
+    padding-top: 230px;
+  }
+
+  &__title {
+    display: none;
+    margin: 0;
+    width: 300px;
+    text-align: center;
+
+    @media #{$tablet} {
+      display: block;
+    }
+
+    @media #{$desktop} {
+      display: block;
+    }
+  }
 }

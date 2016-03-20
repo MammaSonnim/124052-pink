@@ -1,0 +1,26 @@
+.features {
+  min-height: 735px;
+
+  @media #{$tablet} {
+    min-height: 485px;
+  }
+
+  @media #{$desktop} {
+    display: flex;
+    justify-content: space-between;
+    min-height: 600px;
+  }
+
+  &__item {
+    text-align: center;
+
+    @media #{$tablet} {
+      padding-left: 310px;
+      text-align: left;
+    }
+
+    @media #{$desktop} {
+      width: 300px;
+    }
+  }
+}

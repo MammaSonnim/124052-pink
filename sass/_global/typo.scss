@@ -1,0 +1,12 @@
+.text {
+
+}
+
+.title {
+  text-align: center;
+
+  & span {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
