@@ -1,26 +1,32 @@
 .features {
   min-height: 735px;
 
-  @media #{$tablet} {
-    min-height: 485px;
-  }
-
-  @media #{$desktop} {
-    display: flex;
-    justify-content: space-between;
-    min-height: 600px;
-  }
-
   &__item {
     text-align: center;
+  }
+}
 
-    @media #{$tablet} {
-      padding-left: 310px;
+@media #{$tablet} {
+  .features {
+    min-height: 485px;
+
+    &__item {
+      padding-left: 50%;
       text-align: left;
-    }
-
-    @media #{$desktop} {
-      width: 300px;
     }
   }
 }
+
+@media #{$desktop} {
+  .features {
+    display: flex;
+    justify-content: space-between;
+    min-height: 600px;
+
+    &__item {
+      width: $w_block;
+    }
+  }
+}
+
+// @media #{$tab-desk}

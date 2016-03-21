@@ -5,14 +5,6 @@
   align-items: center;
   min-height: 66px;
 
-  @media #{$tablet} {
-    min-height: 110px;
-  }
-
-  @media #{$desktop} {
-    min-height: 110px;
-  }
-
   &__icon-menu {
     position: relative;
     width: 50px;
@@ -26,44 +18,53 @@
       right: 0;
       width: 50px;
       height: 4px;
-      background-color: #ffffff;
+      background-color: $c_alt;
       box-shadow:
-        0 10px 0 0 #ffffff,
-        0 20px 0 0 #ffffff;
+        0 10px 0 0 $c_alt,
+        0 20px 0 0 $c_alt;
     }
     &--opened:before,
     &--opened:after {
       content: "";
       position: absolute;
     }
-
-    @media #{$desktop} {
-      display: none;
-    }
   }
 
   &__list {
     margin: 0;
     padding: 0;
-
     &--closed {
       display: none;
     }
-
     &--opened {
       display: block;
       position: absolute;
       top: 0;
       right: 0;
     }
-
-    @media #{$desktop} {
-      display: flex;
-    }
   }
 
   &__item {
     list-style: none;
   }
+}
 
+@media #{$tablet} {
+  .nav {
+    min-height: 110px;
+  }
+}
+
+@media #{$desktop} {
+  .nav {
+    min-height: 110px;
+
+    &__icon-menu {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+    }
+  }
 }

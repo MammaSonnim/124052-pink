@@ -1,13 +1,25 @@
 .research {
   display: none;
 
-  @media #{$tablet} {
-    display: block;
-    background-color: #ffffff;
+  &__title {
+    margin: 0;
   }
+}
 
-  @media #{$desktop} {
+@media #{$tab-desk} {
+  .research {
     display: block;
-    background-color: #f2f2f2;
+  }
+}
+
+@media #{$tablet} {
+  .research {
+    background-color: transparent;
+  }
+}
+
+@media #{$desktop} {
+  .research {
+    background-color: $bg_grey;
   }
 }

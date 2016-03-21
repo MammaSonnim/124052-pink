@@ -86,6 +86,13 @@ gulp.task("jade", function() {
 });
 
 
+// img
+gulp.task("img", function() {
+  gulp.src("img/**")
+  .pipe(gulp.dest("build/img"))
+});
+
+
 // serve
 gulp.task("serve", ["style", "jade"], function() {
   server.init({

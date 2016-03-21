@@ -2,13 +2,13 @@ extends ../_layouts/base
 
 block variables
   - var isIndex = true
-  - var isNoFooter = true
+  - var isFooterHidden = true
 
 block content
   +b.intro--index
-    +e.H1.title Взгляните на жизнь иначе!
-
-  +download
+    +e.title-wrap--index
+      +e.H1.title--index Взгляните на жизнь иначе!
+    +download
 
   .box
     .container
@@ -33,3 +33,6 @@ block content
   .box
     .container
       +contacts
+  
+  a(href="form.html") form
+  a(href="photo.html") photo

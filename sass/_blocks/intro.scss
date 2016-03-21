@@ -1,38 +1,85 @@
-.intro {
-  @include container;
-  min-height: 455px;
-  margin-top: -66px;
-  background:
-    #1d2631
-    url(../img/bg-back-mobile.jpg)
-    center / cover
-    no-repeat;
-  color: #ffffff;
+$bg_intro:
+  $bg_base
+  url(../img/bg-back-mobile.jpg)
+  center / cover
+  no-repeat;
 
-  @media #{$tablet} {
-    min-height: 730px;
-    margin-top: -110px;
-    padding-top: 210px;
+.intro {
+  min-height: 455px;
+  color: $c_alt;
+  background: $bg_intro;
+  // в индексе-мобайл фон будет на обертке title-wrap, поэтому обнуляем бг
+  &--index {
+    background: none;
   }
 
-  @media #{$desktop} {
-    min-height: 850px;
-    margin-top: -110px;
-    padding-top: 230px;
+  &__title-wrap {
+    @include container;
+    padding-top: 100px;
+    &--index {
+      padding-top: 90px;
+      padding-bottom: 310px;
+      background: $bg_intro;
+    }
   }
 
   &__title {
-    display: none;
     margin: 0;
-    width: 300px;
     text-align: center;
+    outline: 1px solid white;
+  }
 
-    @media #{$tablet} {
-      display: block;
+  &__text {
+    margin: 0;
+    text-align: center;
+    color: $c_base;
+    background-color: $bg_alt;
+  }
+}
+
+@media #{$tab-desk} {
+  .intro {
+    &--index {
+      background: $bg_intro;
     }
 
-    @media #{$desktop} {
-      display: block;
+    &__title-wrap {
+      background: none;
+      &--index {
+
+      }
+    }
+
+    &__title {
+      &--index {
+        width: $w_block;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .intro {
+
+    &__title-wrap {
+      padding-top: 185px;
+      &--index {
+        padding-top: 215px;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+@media #{$desktop} {
+  .intro {
+
+    &__title-wrap {
+      padding-top: 195px;
+      &--index {
+        padding-top: 230px;
+        padding-bottom: 0;
+      }
     }
   }
 }

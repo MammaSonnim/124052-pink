@@ -4,12 +4,16 @@ block variables
 
 block content
   +b.intro
-    +e.H1.title Фотографии пользователей
+    +e.title-wrap
+      +e.H1.title Фотографии пользователей
+    .box
+      .container
+        +e.P.text Взгляните на фотографии, которые выкладывают наши пользователи! Видите, как не хватает ваших?
 
-  .container
-    p.text Взгляните на фотографии, которые выкладывают наши пользователи! Видите, как не хватает ваших?
-
-  +feed
+  +b.SECTION.feed
+    .container
+      each item in site.data.feed
+        +post(item)
 
   .container
     p.text Затмите их всех! Выкладывайте все, что накопилось в телефоне!

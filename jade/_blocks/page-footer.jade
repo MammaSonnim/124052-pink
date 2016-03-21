@@ -1,5 +1,7 @@
 mixin page-footer
-  +b.FOOTER.page-footer
+  - var modName = isFooterHidden ? "--hidden" : ""
+
+  +b.FOOTER(class="page-footer" + modName)
     .container
       +logo(true)
       +socials

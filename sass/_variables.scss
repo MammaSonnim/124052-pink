@@ -1,4 +1,37 @@
 // media query diapasons
-$mobile: "(max-width: 679px)";
-$tablet: "(min-width: 700px) and (max-width: 1199px)";
-$desktop: "(min-width: 1200px)";
+$mobile: "(max-width: 699px)";
+$tablet: "(min-width: 700px) and (max-width: 959px)";
+$desktop: "(min-width: 960px)";
+
+// mobile + tablet
+$portable: "(max-width: 959px)";
+// tablet + desktop = more than mobile
+$tab-desk: "(min-width: 700px)";
+
+// colors
+$c_base: #283645;
+$c_alt: #ffffff;
+$c_bright: #d22856;
+
+$bg_base: $c_base;
+$bg_alt: $c_alt;
+$bg_grey: #f2f2f2;
+$bg_dark: #1d2631;
+
+// widths
+$w_container_min: 320px;
+$w_container_mid: 700px;
+$w_container_max: 1020px;
+
+$w_block: 300px;
+
+// paddings: offset (o), gutter (g)
+$offset_mobile: 20px;
+$offset_tablet: 40px;
+$offset_desktop: 40px;
+
+
+// @media #{$mobile}
+// @media #{$tab-desk}
+// @media #{$tablet}
+// @media #{$desktop}

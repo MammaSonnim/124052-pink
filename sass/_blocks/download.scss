@@ -1,32 +1,21 @@
 .download {
-  @include container
+  @include container;
   min-height: 270px;
-  background-color: #1d2631;
-  color: #ffffff;
+  background-color: $bg_dark;
+  color: $c_alt;
   text-align: center;
+}
 
-  @media #{$tablet} {
-    min-height: 350px;
-    margin-top: -350px;
+// @media #{$mobile}
+// @media #{$tablet}
+// @media #{$desktop}
+
+@media #{$tab-desk} {
+  .download {
     background-color: transparent;
-  }
 
-  @media #{$desktop} {
-    min-height: 350px;
-    margin-top: -350px;
-    background-color: transparent;
-  }
-
-  &__inner {
-    width: 300px;
-    margin: 0 auto;
-
-    @media #{$tablet} {
-      margin: 0;
-    }
-
-    @media #{$desktop} {
-      margin: 0;
+    &__inner {
+      width: $w_block;
     }
   }
 }
