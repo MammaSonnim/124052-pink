@@ -1,10 +1,10 @@
 // media query diapasons
 $mobile: "(max-width: 699px)";
-$tablet: "(min-width: 700px) and (max-width: 959px)";
-$desktop: "(min-width: 960px)";
+$tablet: "(min-width: 700px) and (max-width: 1019px)";
+$desktop: "(min-width: 1020px)";
 
 // mobile + tablet
-$portable: "(max-width: 959px)";
+$portable: "(max-width: 1019px)";
 // tablet + desktop = more than mobile
 $tab-desk: "(min-width: 700px)";
 
@@ -25,11 +25,16 @@ $w_container_max: 1020px;
 
 $w_block: 300px;
 
-// paddings: offset (o), gutter (g)
+// paddings
 $offset_mobile: 20px;
 $offset_tablet: 40px;
 $offset_desktop: 40px;
 
+// z-index
+$z_base: 1;
+$z_fix: ($z_base + 1);
+$z_hover: ($z_fix + 1);
+$z_modal: ($z_hover + 1);
 
 // @media #{$mobile}
 // @media #{$tab-desk}

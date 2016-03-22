@@ -21,8 +21,8 @@
 mixin nav
   +b.NAV.nav
     +logo
-    +e.icon-menu--closed
-    +e.UL.list--closed
+    +e.icon-menu--opened
+    +e.UL.list--opened
       each item in navItems
         +e.LI.item
           +e.A.link(href=item.link) #{item.name}

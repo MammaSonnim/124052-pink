@@ -6,8 +6,6 @@
   outline: 1px solid bisque;
 
   @media #{$tablet} {
-    min-width: $w_container_mid;
-    max-width: $w_container_max;
     padding-left: $offset_tablet;
     padding-right: $offset_tablet;
   }

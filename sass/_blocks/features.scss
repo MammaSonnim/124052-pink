@@ -1,6 +1,4 @@
 .features {
-  min-height: 735px;
-
   &__item {
     text-align: center;
   }
@@ -8,8 +6,6 @@
 
 @media #{$tablet} {
   .features {
-    min-height: 485px;
-
     &__item {
       padding-left: 50%;
       text-align: left;
@@ -21,8 +17,6 @@
   .features {
     display: flex;
     justify-content: space-between;
-    min-height: 600px;
-
     &__item {
       width: $w_block;
     }

@@ -1,9 +1,13 @@
 .download {
   @include container;
-  min-height: 270px;
   background-color: $bg_dark;
   color: $c_alt;
   text-align: center;
+
+  &__inner {
+    width: $w_container_min;
+    margin: 0 auto;
+  }
 }
 
 // @media #{$mobile}
@@ -16,6 +20,7 @@
 
     &__inner {
       width: $w_block;
+      margin: 0;
     }
   }
 }

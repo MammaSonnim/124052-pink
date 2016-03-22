@@ -4,17 +4,17 @@
   padding-left: $offset_mobile;
   padding-right: $offset_mobile;
   outline: 1px solid bisque;
-
   @media #{$tablet} {
-    min-width: $w_container_mid;
-    max-width: $w_container_max;
     padding-left: $offset_tablet;
     padding-right: $offset_tablet;
   }
-
   @media #{$desktop} {
     max-width: $w_container_max;
     padding-left: $offset_desktop;
     padding-right: $offset_desktop;
   }
+}
+
+@mixin col($i) {
+    width: #{$i / 12 * 100%};
 }

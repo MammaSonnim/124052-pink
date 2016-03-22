@@ -1,3 +1,30 @@
+@mixin typo-h1 {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 400;
+
+  // @media #{$mobile}
+  // @media #{$tab-desk}
+  // @media #{$tablet}
+  // @media #{$desktop}
+}
+
+@mixin typo-base-text {
+
+}
+
+@mixin typo-page-heading {
+
+}
+
+@mixin typo-promo {
+
+}
+
+@mixin typo-label {
+
+}
+
 .text {
 
 }
