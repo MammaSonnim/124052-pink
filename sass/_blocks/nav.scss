@@ -11,7 +11,7 @@
     height: 24px;
     font-size: 0;
     cursor: pointer;
-    &--closed:before {
+    &--closed::before {
       content: "";
       position: absolute;
       top: 0;
@@ -23,8 +23,8 @@
         0 10px 0 0 $c_alt,
         0 20px 0 0 $c_alt;
     }
-    &--opened:before,
-    &--opened:after {
+    &--opened::before,
+    &--opened::after {
       content: "";
       position: absolute;
       top: 0;
