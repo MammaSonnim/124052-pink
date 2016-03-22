@@ -11,14 +11,15 @@
     &__table {
       width: 100%;
     }
-    th, td {
-        width: 25%;
-      }
+    th,
+    td {
+      width: 25%;
+    }
 
     td:nth-child(n+2) {
       position: relative;
       text-align: right;
-      &:before {
+      &::before {
         content: attr(data-option);
         position: absolute;
         top: 0;
@@ -29,6 +30,7 @@
     }
   }
 }
+
 @media #{$tab-desk} {
   .tariffs {
     &__table {

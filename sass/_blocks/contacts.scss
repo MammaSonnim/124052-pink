@@ -19,9 +19,8 @@
     }
   }
 }
-@media #{$tab-desk} {
+// @media #{$tab-desk}
 
-}
 @media #{$tablet} {
   .contacts {
     &__item {
@@ -30,6 +29,7 @@
     }
   }
 }
+
 @media #{$desktop} {
   .contacts {
 
