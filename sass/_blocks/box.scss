@@ -5,3 +5,14 @@
     background-color: $bg_grey;
   }
 }
+
+// @media #{$mobile}
+// @media #{$tab-desk}
+// @media #{$tablet}
+@media #{$desktop} {
+  .box {
+    &--blink {
+      background-color: $bg_grey;
+    }
+  }
+}

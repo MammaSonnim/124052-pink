@@ -15,6 +15,9 @@ mixin reviews
       +e.controls
         each item, index in site.data.reviews
           +e.LABEL.control(for="review-" + (index + 1))
+      +e.arrows
+        +e.arrow--left
+        +e.arrow--right
       +e.slides
         each item in site.data.reviews
           +review(item)

@@ -5,7 +5,7 @@
   text-align: center;
 
   &__inner {
-    width: $w_container_min;
+    max-width: $w_container_min;
     margin: 0 auto;
   }
 }

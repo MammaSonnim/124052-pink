@@ -3,7 +3,7 @@ mixin tariffs
     //- slider-block starts
     +b.slider--tariffs
       //- создаем нужное количество управляющих элементов слайдера в зависимости от количества тарифов в tariffsList
-      each index in site.data.tariffs.tariffsList
+      each item, index in site.data.tariffs.tariffsList
         - var isChecked = false
         if index == 0
           - isChecked = true
@@ -14,7 +14,7 @@ mixin tariffs
           checked=isChecked
           )
       +e.controls
-        each index in site.data.tariffs.tariffsList
+        each item, index in site.data.tariffs.tariffsList
           +e.LABEL.control(for="tariff-" + (index + 1))
       +e.slides
         //- slider-content
@@ -37,10 +37,8 @@ mixin tariffs
                 td(data-option=item.optionName, data-tariff=val.tariffName)
                   //-  делаем проверку состояния услуги для привязки соответствующей иконки
                   if val.isValue
-                    | Есть
                     svg.icon--true
                       use
                   else
-                    | Нет
                     svg.icon--false
                       use
