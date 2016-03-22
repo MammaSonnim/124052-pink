@@ -3,8 +3,13 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var plumber = require("gulp-plumber");
+
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
+var reporter     = require('postcss-reporter');
+var syntax_scss  = require('postcss-scss');
+var stylelint    = require('stylelint');
+
 var server = require("browser-sync");
 var notify = require("gulp-notify");
 var jade = require("gulp-jade");
@@ -14,7 +19,21 @@ var dataPath = "jade/_data/";
 
 
 // sass
-gulp.task("style", function() {
+gulp.task("styletest", function() {
+  var processors = [
+    stylelint(),
+    reporter({
+      throwError: true
+    })
+  ];
+
+  return gulp.src(['sass/**/*.scss'])
+    .pipe(plumber())
+    .pipe(postcss(processors, {syntax: syntax_scss}))
+});
+
+
+gulp.task("style", ["styletest"], function() {
   gulp.src("sass/style.scss")
     .pipe(plumber({
       errorHandler: notify.onError("Error:  <%= error.message %>")
@@ -40,7 +59,6 @@ gulp.task("style", function() {
       sound: "Pop"
     }));
 });
-
 
 // jade
 gulp.task("jade", function() {
