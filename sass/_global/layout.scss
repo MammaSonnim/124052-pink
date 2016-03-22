@@ -4,10 +4,12 @@
   padding-left: $offset_mobile;
   padding-right: $offset_mobile;
   outline: 1px solid bisque;
+
   @media #{$tablet} {
     padding-left: $offset_tablet;
     padding-right: $offset_tablet;
   }
+
   @media #{$desktop} {
     max-width: $w_container_max;
     padding-left: $offset_desktop;
@@ -16,5 +18,5 @@
 }
 
 @mixin col($i) {
-    width: #{$i / 12 * 100%};
+  width: #{$i / 12 * 100%};
 }
