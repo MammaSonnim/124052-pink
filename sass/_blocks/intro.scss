@@ -28,11 +28,8 @@ $bg_intro:
     outline: 1px solid white;
   }
 
-  &__text {
-    margin: 0;
-    text-align: center;
-    color: $c_base;
-    background-color: $bg_alt;
+  &__text-wrap {
+    @include container;
   }
 }
 

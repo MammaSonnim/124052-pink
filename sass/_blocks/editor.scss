@@ -1,0 +1,87 @@
+.editor {
+  @include container;
+  background-color: $bg_grey;
+
+  &__inner {
+    @include grid;
+    flex-direction: column;
+  }
+  // &__img-wrap {
+  //   outline: 1px solid tomato;
+  // }
+  //
+  // &__tools {
+  //   outline: 1px solid tomato;
+  // }
+  &__input {
+    display: none;
+  }
+
+  &__control {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+  }
+
+  &__btn-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media #{$mobile} {
+  .editor {
+    // переключение инструментов
+    &__input[id="tool-crop"]:checked + &__label[for="tool-crop"],
+    &__input[id="tool-fill"]:checked + &__label[for="tool-fill"],
+    &__input[id="tool-contrast"]:checked + &__label[for="tool-contrast"] {
+      outline: 1px solid tomato;
+    }
+
+    &__control {
+      display: none;
+    }
+
+    &__input[id="tool-crop"]:checked ~ &__control--crop,
+    &__input[id="tool-fill"]:checked ~ &__control--fill,
+    &__input[id="tool-contrast"]:checked ~ &__control--contrast {
+      display: block;
+    }
+  }
+}
+
+@media #{$tab-desk} {
+  .editor {
+    &__inner {
+      flex-direction: row;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .editor {
+    &__img-wrap {
+      @include col(6);
+    }
+
+    &__tools {
+      @include col(6);
+    }
+  }
+}
+
+@media #{$desktop} {
+  .editor {
+    &__img-wrap {
+      @include col(4);
+    }
+
+    &__tools {
+      @include col(8);
+    }
+
+    &__btn-wrap {
+      flex-direction: row;
+    }
+  }
+}

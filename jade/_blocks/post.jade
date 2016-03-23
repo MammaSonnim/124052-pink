@@ -1,8 +1,8 @@
 mixin post(item)
   if item.top
     +b.ARTICLE.post--top
-      +e.A.link(href=item.link)
-        +e.IMG.img--top(
+      +e.A.img-wrap(href=item.link)
+        +e.IMG.img(
           src=item.img,
           alt=item.imgAlt,
           title=item.imgAlt)
@@ -18,8 +18,8 @@ mixin post(item)
           +e.SPAN.likes= "Нравится: " + item.likes
 
   else
-    +b.ARTICLE.post
-      +e.A.link(href=item.link)
+    +b.ARTICLE.post--common
+      +e.A.img-wrap(href=item.link)
         +e.IMG.img(
           src=item.img
           alt=item.imgAlt,

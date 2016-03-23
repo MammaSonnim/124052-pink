@@ -2,11 +2,6 @@
   font-size: 30px;
   line-height: 1.2;
   font-weight: 400;
-
-  // @media #{$mobile}
-  // @media #{$tab-desk}
-  // @media #{$tablet}
-  // @media #{$desktop}
 }
 
 // @mixin typo-base-text
@@ -14,11 +9,21 @@
 // @mixin typo-promo
 // @mixin typo-label
 
+.text {
+  text-align: center;
+  color: $c_base;
+}
+
 .title {
   text-align: center;
 
-  & span {
+  span {
     display: block;
     margin-bottom: 10px;
   }
 }
+
+// @media #{$mobile}
+// @media #{$tab-desk}
+// @media #{$tablet}
+// @media #{$desktop}
