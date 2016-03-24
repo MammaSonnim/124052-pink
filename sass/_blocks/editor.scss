@@ -6,13 +6,17 @@
     @include grid;
     flex-direction: column;
   }
-  // &__img-wrap {
-  //   outline: 1px solid tomato;
-  // }
-  //
-  // &__tools {
-  //   outline: 1px solid tomato;
-  // }
+
+  &__img-wrap {
+    display: flex;
+    width: 100%;
+  }
+
+  &__img {
+    width: $w_block - $gutter;
+    margin: 0 auto;
+  }
+
   &__input {
     display: none;
   }
@@ -55,17 +59,27 @@
     &__inner {
       flex-direction: row;
     }
+    &__img-wrap {
+      @include col-fluid(6);
+    }
+
+    &__img {
+      width: $w_block;
+    }
+
+    &__tools {
+      @include col-fluid(6);
+    }
   }
 }
 
 @media #{$tablet} {
   .editor {
     &__img-wrap {
-      @include col(6);
     }
 
     &__tools {
-      @include col(6);
+
     }
   }
 }
@@ -73,11 +87,11 @@
 @media #{$desktop} {
   .editor {
     &__img-wrap {
-      @include col(4);
+
     }
 
     &__tools {
-      @include col(8);
+
     }
 
     &__btn-wrap {

@@ -20,18 +20,34 @@
 @mixin grid {
   display: flex;
   flex-wrap: wrap;
-
-  @media #{$tab-desk} {
-    margin-left: - $gutter / 2;
-    margin-right: - $gutter / 2;
-  }
+  justify-content: center;
+  margin-left: - $gutter / 2;
+  margin-right: - $gutter / 2;
+  // @media #{$tab-desk} {
+  //
+  // }
 }
 
-@mixin col($i) {
+@mixin col-fluid($i) {
   width: #{$i / 12 * 100%};
+  display: flex;
+  flex-direction: column;
 
   @media #{$tab-desk} {
     padding-left: $gutter / 2;
     padding-right: $gutter / 2;
+  }
+}
+
+@mixin col {
+  display: flex;
+  flex-direction: column;
+  width: $w_block - $gutter;
+  // margin: 0 auto;
+  padding-left: $gutter / 2;
+  padding-right: $gutter / 2;
+
+  @media #{$tab-desk} {
+    width: $w_block + $gutter;
   }
 }

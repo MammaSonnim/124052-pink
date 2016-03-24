@@ -25,12 +25,16 @@ $w_container_max: 1020px;
 
 $w_block: 300px;
 
-// paddings
+// paddings and margins
 $offset_mobile: 20px;
 $offset_tablet: 40px;
 $offset_desktop: 40px;
 
 $gutter: 20px;
+
+// fonts
+$fz_base: 14px;
+$lh_base: 24 / 14;
 
 // z-index
 $z_base: 1;
@@ -38,6 +42,7 @@ $z_fix: ($z_base + 1);
 $z_hover: ($z_fix + 1);
 $z_modal: ($z_hover + 1);
 
+// @media #{$portable}
 // @media #{$mobile}
 // @media #{$tab-desk}
 // @media #{$tablet}

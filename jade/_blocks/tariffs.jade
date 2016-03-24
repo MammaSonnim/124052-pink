@@ -37,8 +37,10 @@ mixin tariffs
                 td(data-option=item.optionName, data-tariff=val.tariffName)
                   //-  делаем проверку состояния услуги для привязки соответствующей иконки
                   if val.isValue
+                    small Есть
                     svg.icon--true
                       use
                   else
+                    small Нет
                     svg.icon--false
                       use

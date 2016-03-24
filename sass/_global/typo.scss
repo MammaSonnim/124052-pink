@@ -9,18 +9,14 @@
 // @mixin typo-promo
 // @mixin typo-label
 
-.text {
-  text-align: center;
+body {
+  font-size: $fz_base;
+  line-height: $lh_base;
   color: $c_base;
 }
 
-.title {
+.text {
   text-align: center;
-
-  span {
-    display: block;
-    margin-bottom: 10px;
-  }
 }
 
 // @media #{$mobile}

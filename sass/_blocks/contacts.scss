@@ -24,7 +24,7 @@
 @media #{$tablet} {
   .contacts {
     &__item {
-      @include col(6);
+      @include col-fluid(6);
       margin: auto;
     }
   }
@@ -34,7 +34,7 @@
   .contacts {
 
     &__item {
-      @include col(4);
+      @include col-fluid(4);
 
       &:nth-of-type(1) {
         order: 1;

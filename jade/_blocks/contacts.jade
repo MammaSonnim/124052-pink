@@ -12,5 +12,5 @@ mixin contacts
               when "email"
                 +e.A.link(href="mailto:"+item.value)= item.descr
               default
-                +e.SPAN.item= item.descr
+                +e.SPAN.text= item.descr
     +e.map
