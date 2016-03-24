@@ -6,9 +6,9 @@ var plumber = require("gulp-plumber");
 
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
-var reporter     = require('postcss-reporter');
-var syntax_scss  = require('postcss-scss');
-var stylelint    = require('stylelint');
+var reporter     = require("postcss-reporter");
+var syntax_scss  = require("postcss-scss");
+var stylelint    = require("stylelint");
 
 var server = require("browser-sync");
 var notify = require("gulp-notify");
@@ -27,7 +27,7 @@ gulp.task("styletest", function() {
     })
   ];
 
-  return gulp.src(['sass/**/*.scss'])
+  return gulp.src(["!sass/_global/svg-sprite.scss", "sass/**/*.scss"])
     .pipe(plumber())
     .pipe(postcss(processors, {syntax: syntax_scss}))
 });
