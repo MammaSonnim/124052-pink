@@ -10,9 +10,15 @@
   &__img-wrap {
     display: flex;
     width: 100%;
+    outline: 1px solid tomato;
   }
 
   &__img {
+    width: $w_block - $gutter;
+    margin: 0 auto;
+  }
+
+  &__tools {
     width: $w_block - $gutter;
     margin: 0 auto;
   }
@@ -30,6 +36,8 @@
   &__btn-wrap {
     display: flex;
     flex-direction: column;
+    width: $w_block - $gutter;
+    margin: 0 auto;
   }
 }
 
@@ -70,32 +78,32 @@
     &__tools {
       @include col-fluid(6);
     }
-  }
-}
-
-@media #{$tablet} {
-  .editor {
-    &__img-wrap {
-    }
-
-    &__tools {
-
-    }
-  }
-}
-
-@media #{$desktop} {
-  .editor {
-    &__img-wrap {
-
-    }
-
-    &__tools {
-
-    }
 
     &__btn-wrap {
       flex-direction: row;
     }
   }
 }
+// @media #{$tablet} {
+//   .editor {
+//     &__img-wrap {
+//     }
+//
+//     &__tools {
+//
+//     }
+//   }
+// }
+//
+// @media #{$desktop} {
+//   .editor {
+//     // &__img-wrap {
+//     //
+//     // }
+//     //
+//     // &__tools {
+//     //
+//     // }
+//
+//   }
+// }
