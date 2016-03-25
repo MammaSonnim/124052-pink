@@ -32,57 +32,14 @@
   &__slides {
     display: flex;
   }
-
-  // reviews
-  &--reviews &__slides {
-    width: 300%;
-  }
-  // reviews logic
-  &__input[id="review-1"]:checked ~ &__controls &__control[for="review-1"],
-  &__input[id="review-2"]:checked ~ &__controls &__control[for="review-2"],
-  &__input[id="review-3"]:checked ~ &__controls &__control[for="review-3"] {
-    border-color: $c_base;
-  }
-
-  &__input[id="review-1"]:checked ~ &__slides {
-    transform: translate(0);
-  }
-  &__input[id="review-2"]:checked ~ &__slides {
-    transform: translate(-33.33%);
-  }
-  &__input[id="review-3"]:checked ~ &__slides {
-    transform: translate(-66.66%);
-  }
 }
 
 @media #{$mobile} {
   .slider {
 
-    // tariffs
     &--tariffs {
       padding-right: $offset_mobile;
       padding-left: $offset_mobile;
-    }
-
-    &--tariffs &__slides {
-      width: 400%;
-    }
-
-    // tariffs logic
-    &__input[id="tariff-1"]:checked ~ &__controls &__control[for="tariff-1"],
-    &__input[id="tariff-2"]:checked ~ &__controls &__control[for="tariff-2"],
-    &__input[id="tariff-3"]:checked ~ &__controls &__control[for="tariff-3"] {
-      border-color: $c_base;
-    }
-
-    &__input[id="tariff-1"]:checked ~ &__slides {
-      transform: translate(-25%);
-    }
-    &__input[id="tariff-2"]:checked ~ &__slides {
-      transform: translate(-50%);
-    }
-    &__input[id="tariff-3"]:checked ~ &__slides {
-      transform: translate(-75%);
     }
   }
 }
